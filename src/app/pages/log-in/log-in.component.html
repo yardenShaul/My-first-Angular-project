@@ -1,0 +1,11 @@
+<section class="login-main-container">
+    <h2>Sign in</h2>
+    <form (ngSubmit)="onSubmitCredentials()">
+        <label for="username">Username: </label>
+        <input [(ngModel)]="credentials.userName" type="text" name="username">
+
+        <label for="password">Password: </label>
+        <input [(ngModel)]="credentials.password" type="password" name="password">
+        <button>Submit</button>
+    </form>
+</section>

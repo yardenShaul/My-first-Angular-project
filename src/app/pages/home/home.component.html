@@ -1,0 +1,14 @@
+<section class="homepage-container">
+    <div class="home-title-container"><h2>Hello {{user.fullName}}!</h2></div>
+    <div class="home-info" *ngIf="user.coins !== 0">
+        <h3>Your balance: </h3>
+        <div class="user-coins"><img src="../../../assets/img/coins.png" alt=""><h2>Coins: {{user.coins}}</h2></div>
+        <div class="user-coins">
+            <img src="../../../assets/img/bitcoin.png" alt="">
+            <p>In Bitcoin: {{ bitcoinPriceUrle | fetchData }}</p>
+        </div>
+    </div>
+    <div *ngIf="user.fullName === 'Guest'">
+        <button (click)="onLogin()" class="login-button">Log in</button>
+    </div>
+</section>

@@ -1,0 +1,6 @@
+<section class="coins-app-main-container">
+        <app-contact-filter></app-contact-filter>
+        <div title="Add contact"><a routerLink="contact/edit"><img src="../../../assets/img/plus.png" alt=""></a></div>
+        <app-contact-list (onRemove)="onRemoveContact($event)" [contacts]="(contacts$ | async)!"></app-contact-list>
+</section>
+<router-outlet></router-outlet>

@@ -1,0 +1,11 @@
+<section class="contact-details-main-container">
+    <div class="contact-details-main-info">
+        <h2 *ngIf="txt">{{txt}}</h2>
+        <p><span>Name:</span> {{contact.name}}</p>
+        <p><span>Phone:</span> {{contact.phone}}</p>
+        <p><span>Email:</span> {{contact.email}}</p>
+        <p><span>Craeted at:</span> {{contact.createdAt | dateDesc}}</p>
+        <img src="https://robohash.org/{{contact.name}}?set=set2" alt="">
+    </div>
+    <div class="button-container"><button title="Back" (click)="onBack()"><img src="../../../assets/img/back.png" alt=""></button></div>
+</section>
