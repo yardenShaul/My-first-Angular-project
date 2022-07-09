@@ -5,7 +5,11 @@
         <p><span>Phone:</span> {{contact.phone}}</p>
         <p><span>Email:</span> {{contact.email}}</p>
         <p><span>Craeted at:</span> {{contact.createdAt | dateDesc}}</p>
+        <p>coins: {{contact.coins}}</p>
         <img src="https://robohash.org/{{contact.name}}?set=set2" alt="">
     </div>
-    <div class="button-container"><button title="Back" (click)="onBack()"><img src="../../../assets/img/back.png" alt=""></button></div>
+    <div class="actions-container">
+        <div class="button-container"><button title="Back" (click)="onBack()"><img src="../../../assets/img/back.png" alt=""></button></div>
+        <div class="button-container" title="Transfer money"><a [routerLink]="['/contact/transfermoney', contact._id]"><img src="../../../assets/img/save-money.png" alt=""></a></div>
+    </div>
 </section>

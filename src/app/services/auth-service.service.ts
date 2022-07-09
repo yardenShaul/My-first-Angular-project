@@ -37,6 +37,10 @@ export class AuthServiceService {
     else return this._guest
   }
 
+  updateUser(amount: number) {
+    this._authorizedUserForDev.coins = this._authorizedUserForDev.coins - amount
+  }
+
   onLogIn(credentials : UserCredentials) {
     if (credentials.userName === this._authorizedUserForDev.userName && credentials.password === this._authorizedUserForDev.password) {
       console.log('good')

@@ -1,0 +1,8 @@
+<div class="money-transfer-main-container">
+    <h2>Transfer money to <span>{{recipientContact.name}}</span></h2>
+    <form (ngSubmit)="onTransferMoney()">
+        <label for="amount">Amount: </label>
+        <input [(ngModel)]="amount" type="number" min="0" max="{{currUser.coins}}" name="amount" id="amount">
+        <button>Transfer</button>
+    </form>
+</div>

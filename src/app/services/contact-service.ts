@@ -10,17 +10,19 @@ import { Contact } from '../models/contact.model';
 })
 export class ContactService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    ) { }
 
   private _contactsDB: Contact[] = [
-    {_id: '3473-18181F7940E-3485', name: 'Sara Brown', email: 'sara31@yaboo.com', phone: '+4 (56) 634-4851', createdAt: new Date('2022-06-27')},
-    {_id: '3216-18181F7940E-4740', name: 'Bob Jason', email: 'bob75@yaboo.com', phone: '+6 (17) 398-7645', createdAt: new Date('2022-06-22')},
-    {_id: '3446-18181F7940E-3587', name: 'Gidi Dov', email: 'gidi24@yaboo.com', phone: '+4 (75) 555-9379', createdAt: new Date('2022-05-10')},
-    {_id: '2875-18181F7940E-9876', name: 'Dave Shrut', email: 'dave24@yaboo.com', phone: '+1 (28) 733-2932', createdAt: new Date('2021-12-20')},
-    {_id: '7966-18181F7940E-9267', name: 'Ben Jery', email: 'ben15@yaboo.com', phone: '+7 (52) 666-5963', createdAt: new Date('2021-11-18')},
-    {_id: '6444-1ASFJB7940E-8534', name: 'Noam Davidson', email: 'noam85@yaboo.com', phone: '+7 (86) 275-8741', createdAt: new Date('2020-11-12')},
-    {_id: '6400-18SADF7940E-9877', name: 'Puki Ben David', email: 'puki77@yaboo.com', phone: '+7 (33) 987-9891', createdAt: new Date('2020-11-12')},
-    {_id: '6465-18REASFV40E-8522', name: 'Ester Martin', email: 'ester11@yaboo.com', phone: '+7 (11) 375-9741', createdAt: new Date('2020-11-12')},
+    {_id: '3473-18181F7940E-3485', name: 'Sara Brown', email: 'sara31@yaboo.com', phone: '+4 (56) 634-4851', createdAt: new Date('2022-06-27'), coins: 100},
+    {_id: '3216-18181F7940E-4740', name: 'Bob Jason', email: 'bob75@yaboo.com', phone: '+6 (17) 398-7645', createdAt: new Date('2022-06-22'), coins: 100},
+    {_id: '3446-18181F7940E-3587', name: 'Gidi Dov', email: 'gidi24@yaboo.com', phone: '+4 (75) 555-9379', createdAt: new Date('2022-05-10'), coins: 100},
+    {_id: '2875-18181F7940E-9876', name: 'Dave Shrut', email: 'dave24@yaboo.com', phone: '+1 (28) 733-2932', createdAt: new Date('2021-12-20'), coins: 100},
+    {_id: '7966-18181F7940E-9267', name: 'Ben Jery', email: 'ben15@yaboo.com', phone: '+7 (52) 666-5963', createdAt: new Date('2021-11-18'), coins: 100},
+    {_id: '6444-1ASFJB7940E-8534', name: 'Noam Davidson', email: 'noam85@yaboo.com', phone: '+7 (86) 275-8741', createdAt: new Date('2020-11-12'), coins: 100},
+    {_id: '6400-18SADF7940E-9877', name: 'Puki Ben David', email: 'puki77@yaboo.com', phone: '+7 (33) 987-9891', createdAt: new Date('2020-11-12'), coins: 100},
+    {_id: '6465-18REASFV40E-8522', name: 'Ester Martin', email: 'ester11@yaboo.com', phone: '+7 (11) 375-9741', createdAt: new Date('2020-11-12'), coins: 100},
   ]
 
   private _contacts$ = new BehaviorSubject<Contact[]>([]);
@@ -81,7 +83,7 @@ export class ContactService {
     this._contacts$.next([...this._contactsDB])
     return of(contact)
   }
-
+  
   private _makeId(length = 5) {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

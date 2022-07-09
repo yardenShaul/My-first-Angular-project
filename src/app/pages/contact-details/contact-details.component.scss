@@ -15,18 +15,31 @@
             width: 150px;
         }
     }
-    .button-container{
-        width: 100%;
+    .actions-container{
         display: flex;
-        justify-content: start;
-        button{
-            max-width: 150px;
-            border: 0;
-            background-color: transparent;
-            cursor: pointer;
-            img{
-                height: 50px;
-                width: 50px;
+        flex-direction: row;
+        justify-content: flex-start;
+        .button-container{
+            display: flex;
+            button{
+                max-width: 150px;
+                border: 0;
+                background-color: transparent;
+                cursor: pointer;
+                img{
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+            a{
+                max-width: 150px;
+                border: 0;
+                background-color: transparent;
+                cursor: pointer;
+                img{
+                    height: 50px;
+                    width: 50px;
+                }
             }
         }
     }

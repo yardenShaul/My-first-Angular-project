@@ -19,6 +19,7 @@ import { LogInComponent } from './pages/log-in/log-in.component';
 import { HomeComponent } from './pages/home/home.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { FetchDataPipe } from './pipes/fetch-data.pipe';
+import { MoneyTransferComponent } from './pages/money-transfer/money-transfer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FetchDataPipe } from './pipes/fetch-data.pipe';
     LogInComponent,
     HomeComponent,
     StatisticsComponent,
-    FetchDataPipe
+    FetchDataPipe,
+    MoneyTransferComponent
   ],
   imports: [
     BrowserModule,

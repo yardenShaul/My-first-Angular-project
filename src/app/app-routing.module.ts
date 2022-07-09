@@ -7,6 +7,7 @@ import { ContactDetailsComponent } from './pages/contact-details/contact-details
 import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LogInComponent } from './pages/log-in/log-in.component';
+import { MoneyTransferComponent } from './pages/money-transfer/money-transfer.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { ContactResolverService } from './services/contact-resolver.service';
 
@@ -15,6 +16,12 @@ const routes: Routes = [
   {
     path: 'contact/:_id', 
     component: ContactDetailsComponent, 
+    resolve: { contact: ContactResolverService },
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'contact/transfermoney/:_id',
+    component: MoneyTransferComponent,
     resolve: { contact: ContactResolverService },
     canActivate: [AuthGuardGuard]
   },
